@@ -47,7 +47,8 @@ impl MullvadStatus {
 
         json!({
             "alt": status_text,
-            "tooltip": self.get_mullvad_status()
+            "tooltip": self.get_mullvad_status(),
+            "class": status_text
         })
         .to_string()
     }
