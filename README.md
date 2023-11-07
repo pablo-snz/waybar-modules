@@ -28,18 +28,23 @@ To use the "Mullvad" module, follow these steps:
     Example:
 
     ```{jsonc}
+    
     "custom/mullvad": {
         "exec": "path_to_your_mullvad_binary",
-        "return-type": "json"
+        "interval": "once",
+        "return-type": "json",
         "format": "{icon}",
         "format-icons": {
             "on": "󰌆",
             "off": "󰌊"
-        },        "return-type": "json",
-        "tooltip": true
-        "on-click": "path_to_your_mullvad_binary -t"
-        "on-click-right: "mullvad-vpn"
-    }
+        },        
+        "return-type": "json",
+        "tooltip": true,
+        "on-click": "path_to_your_mullvad_binary -t; pkill -RTMIN+9 waybar",
+        "on-click-right": "mullvad-vpn",
+        "signal": 9
+    },
+
     ```
 
     Please replace "path_to_your_mullvad_binary" with the path to the built Mullvad module binary.
